@@ -9,6 +9,7 @@
   "default_locale": "en",
 
   "author": "Yuri Konotopov <ykonotopov@gmail.com>",
+  "key": "${PUBLIC_KEY}",
 
   "icons": {
     "16": "icons/GnomeLogo-16.png",
