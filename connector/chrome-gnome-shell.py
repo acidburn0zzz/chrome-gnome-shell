@@ -23,8 +23,23 @@ import struct
 import sys
 import traceback
 
+
+class Logger(object):
+    def __init__(self, filename="Default.log"):
+        self.terminal = sys.stdout
+        self.log = open(filename, "a")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def fileno(self):
+        return self.log.fileno()
+
+sys.stderr = Logger("/tmp/cgs-%d-%d.stderr" % (os.getppid(), os.getpid()))
+
 CONNECTOR_VERSION = 8.2
-DEBUG_ENABLED = False
+DEBUG_ENABLED = True
 
 SHELL_SCHEMA = "org.gnome.shell"
 ENABLED_EXTENSIONS_KEY = "enabled-extensions"
