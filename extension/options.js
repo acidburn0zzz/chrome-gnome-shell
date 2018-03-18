@@ -194,6 +194,11 @@ function restore_options()
 
 		setLightIcon(items.useLightIcon);
 	});
+
+	if(COMPAT.IS_FIREFOX)
+	{
+		$('dialog').hide();
+	}
 }
 
 function retrieveUpdateTimes()
